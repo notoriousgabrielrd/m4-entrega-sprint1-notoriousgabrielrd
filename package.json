@@ -1,0 +1,30 @@
+{
+  "name": "m4-entrega-sprint1-notoriousgabrielrd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenzie-Academy-Brasil-Developers/m4-entrega-sprint1-notoriousgabrielrd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kenzie-Academy-Brasil-Developers/m4-entrega-sprint1-notoriousgabrielrd/issues"
+  },
+  "homepage": "https://github.com/Kenzie-Academy-Brasil-Developers/m4-entrega-sprint1-notoriousgabrielrd#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sucrase": "^3.21.0"
+  }
+}
