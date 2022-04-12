@@ -5,7 +5,7 @@ import createUserController from "../controllers/createUser.controller"
 import listUserController from "../controllers/listUser.controller"
 import updateUserController from "../controllers/updateUser.controller"
 import deleteUserController from "../controllers/deleteUser.controller"
-import loginUserController from "../controllers/loginUser.controller"
+// import loginUserController from "../controllers/loginUser.controller"
 
 import verifyEmailAvaialabilityMiddleware from "../middlewares/verifyEmailAvailaility.middleware"
 import verifyAuthTokenMiddleware from "../middlewares/verifyAuthToken.middleware"
@@ -19,7 +19,7 @@ router.get("", verifyAdmAuth, listUserController)
 router.get("/profile/:id", verifyAuthTokenMiddleware, listUserProfileController)
 router.put("/:id", verifyAuthTokenMiddleware, updateUserController)
 router.delete("/:id", verifyAuthTokenMiddleware, deleteUserController)
-router.post("/login", loginUserController)
+// router.post("/login", loginUserController)
 
 
 
