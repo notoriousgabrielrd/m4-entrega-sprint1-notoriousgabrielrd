@@ -13,7 +13,7 @@ const createUserService = async (email, name, password) => {
         name,
         password: hashedPassword,
         id: uuidv4(),
-        isAdm: true,
+        isAdm: false,
         createdOn: Date(),
         updatedOn: Date(),
     }
@@ -24,7 +24,7 @@ const createUserService = async (email, name, password) => {
 
     users.push(newUser)
 
-    console.log(returnedUser.isAdm)
+
 
     return returnedUser
 

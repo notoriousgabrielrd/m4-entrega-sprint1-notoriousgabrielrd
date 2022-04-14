@@ -11,6 +11,10 @@ const verifyEmailAvaialabilityMiddleware = (request, response, next) => {
 
     if (userAlreadyExist) { return response.status(400).json({ message: "This email addres is being already used!" }) }
 
+    request.teste = { informacao: "teste" }
+
+
+
     // o next manda para a próxima callback da route
     next()
 

@@ -12,6 +12,9 @@ const verifyAuthTokenMiddleware = (request, response, next) => {
             return response.status(401).json({ message: "Invalid token!" })
         }
 
+
+        request.hack = { id: decoded.id, isAdm: decoded.isAdm }
+
         next()
     })
 

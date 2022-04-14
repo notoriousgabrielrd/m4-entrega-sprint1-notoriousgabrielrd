@@ -2,7 +2,6 @@ import users from "../database";
 import jwt from "jsonwebtoken"
 import * as bycrypt from "bcryptjs"
 import bcrypt from "bcryptjs/dist/bcrypt";
-import { response } from "express";
 
 
 const loginUserService = (email, password) => {
@@ -10,7 +9,7 @@ const loginUserService = (email, password) => {
     const user = users.find((element) => element.email === email)
 
     const { isAdm, id } = user
-    console.log("user:", isAdm, id)
+
 
     if (!user) {
         throw new Error("User not found!")
