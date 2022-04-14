@@ -16,10 +16,9 @@ const router = Router()
 
 router.post("", verifyEmailAvaialabilityMiddleware, createUserController)
 router.get("", verifyAdmAuth, listUserController)
-router.get("/profile/:id", verifyAuthTokenMiddleware, listUserProfileController)
+router.get("/profile", verifyAuthTokenMiddleware, listUserProfileController)
 router.put("/:id", verifyAuthTokenMiddleware, updateUserController)
 router.delete("/:id", verifyAuthTokenMiddleware, deleteUserController)
-// router.post("/login", loginUserController)
 
 
 

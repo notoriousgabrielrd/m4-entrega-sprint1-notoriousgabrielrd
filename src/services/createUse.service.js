@@ -18,9 +18,15 @@ const createUserService = async (email, name, password) => {
         updatedOn: Date(),
     }
 
+    const { id, isAdm, updatedOn, createdOn } = newUser
+
+    const returnedUser = { name, email, id, isAdm, updatedOn, createdOn }
+
     users.push(newUser)
 
-    return newUser
+    console.log(returnedUser.isAdm)
+
+    return returnedUser
 
 }
 

@@ -8,7 +8,7 @@ const createUserController = async (request, response) => {
 
     const user = await createUserService(email, name, password)
 
-    return response.json(user)
+    return response.status(201).json(user)
 
 }
 

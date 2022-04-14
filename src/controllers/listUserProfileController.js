@@ -1,12 +1,19 @@
 import listUserProfileService from "../services/listUserProfile.service";
+import jwt from "jsonwebtoken"
 
 const listUserProfileController = (request, response) => {
+    let token = request.headers.authorization.split(" ")[1]
 
-    const { id } = request.params
-    console.log("id:", id)
-    const user = listUserProfileService(id)
+    jwt.verify(token, "SECRET_KEY", (error, decoded) => {
 
-    return response.json(user)
+        const id = decoded.id
+
+
+
+        const user = listUserProfileService(id)
+
+        return response.json(user)
+    })
 
 }
 

@@ -4,7 +4,7 @@ import userRouter from "./routes/users.routes"
 
 const app = express()
 
-const port = 3333
+const port = 3000
 
 app.use(express.json())
 
