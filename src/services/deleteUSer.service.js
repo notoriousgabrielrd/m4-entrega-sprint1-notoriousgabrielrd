@@ -4,11 +4,11 @@ const deleteUserService = (id) => {
 
     const userIndex = users.findIndex((element) => element.id === id)
 
-    if (userIndex) {
+    if (!userIndex) {
         return "User not found!"
     }
 
-    userIndex.splice(userIndex, 1)
+    users.splice(userIndex, 1)
 
     return "This user has been deleted!"
 

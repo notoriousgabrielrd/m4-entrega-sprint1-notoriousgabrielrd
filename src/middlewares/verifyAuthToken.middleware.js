@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken"
 const verifyAuthTokenMiddleware = (request, response, next) => {
 
     let token = request.headers.authorization.split(" ")[1]
-    console.log("token:", token)
     if (!token) { return response.status(401).json({ message: "Missing authorization token!" }) }
 
     // fazemos isso para tratar nosso token do tipo Bearer ...token
