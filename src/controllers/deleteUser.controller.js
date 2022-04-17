@@ -6,7 +6,9 @@ const deleteUserController = (request, response) => {
 
     const deletedUser = deleteUserService()
 
-    return response.json(deletedUser)
+    return response.status(200).json({
+        message: deletedUser
+    })
 }
 
 

@@ -21,7 +21,7 @@ router.use(verifyAuthTokenMiddleware)
 router.get("/profile", listUserProfileController)
 
 router.patch("/:id", verifyUsersPatchMiddleware, updateUserController)
-router.delete("/:id", deleteUserController)
+router.delete("/:id", verifyUsersPatchMiddleware, deleteUserController)
 
 router.use(verifyAdmAuth)
 
