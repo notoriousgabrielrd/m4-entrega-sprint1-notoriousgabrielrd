@@ -11,14 +11,21 @@ import verifyEmailAvaialabilityMiddleware from "../middlewares/verifyEmailAvaila
 import verifyAuthTokenMiddleware from "../middlewares/verifyAuthToken.middleware"
 import verifyAdmAuth from "../middlewares/verifyAdmAuth.middleware"
 import listUserProfileController from "../controllers/listUserProfileController"
+import verifyUsersPatchMiddleware from "../middlewares/verifyUsersPatch.middleware"
 
 const router = Router()
 
 router.post("", verifyEmailAvaialabilityMiddleware, createUserController)
-router.get("", verifyAdmAuth, listUserController)
-router.get("/profile", verifyAuthTokenMiddleware, listUserProfileController)
-router.patch("/:id", verifyAuthTokenMiddleware, updateUserController)
-router.delete("/:id", verifyAuthTokenMiddleware, deleteUserController)
+
+router.use(verifyAuthTokenMiddleware)
+router.get("/profile", listUserProfileController)
+
+router.patch("/:id", verifyUsersPatchMiddleware, updateUserController)
+router.delete("/:id", deleteUserController)
+
+router.use(verifyAdmAuth)
+
+router.get("", listUserController)
 
 
 

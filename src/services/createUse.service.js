@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid"
 import users from "../database"
 import * as bycrypt from "bcryptjs"
 
-const createUserService = async (email, name, password) => {
+const createUserService = async (email, name, password, isAdm) => {
 
 
     // transfoma a função em async aqui e em controller
@@ -12,13 +12,13 @@ const createUserService = async (email, name, password) => {
         email,
         name,
         password: hashedPassword,
+        isAdm,
         id: uuidv4(),
-        isAdm: false,
         createdOn: Date(),
         updatedOn: Date(),
     }
 
-    const { id, isAdm, updatedOn, createdOn } = newUser
+    const { id, updatedOn, createdOn } = newUser
 
     const returnedUser = { name, email, id, isAdm, updatedOn, createdOn }
 

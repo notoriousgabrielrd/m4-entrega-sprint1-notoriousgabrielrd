@@ -7,9 +7,12 @@ const loginUserController = (request, response) => {
     try {
         const userLogin = loginUserService(email, password)
 
-        return response.json({ tokenJWT: userLogin })
+        return response.json({
+            status: "You're logged!",
+            tokenJWT: userLogin
+        })
     } catch (err) {
-        return response.status(400).json({
+        return response.status(401).json({
             status: "error",
             message: err.message
         })

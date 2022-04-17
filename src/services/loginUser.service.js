@@ -6,14 +6,13 @@ import bcrypt from "bcryptjs/dist/bcrypt";
 
 const loginUserService = (email, password) => {
     // retorna um objeto do user
-    const user = users.find((element) => element.email === email)
-
-    const { isAdm, id } = user
-
+    const user = users.find((element) => element.email == email)
 
     if (!user) {
         throw new Error("User not found!")
     }
+
+    const { isAdm, id } = user
 
     const passwordMatch = bcrypt.compareSync(password, user.password)
 
